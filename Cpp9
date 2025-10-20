@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+class Student {
+private:
+    int id;
+    string name;
+public:
+       Student(int i, string n) 
+{
+        id = i;
+        name = n;
+        cout << "Parameterized Constructor called." << endl;
+    }
+    Student(const Student &s)
+   {
+        id = s.id;
+        name = s.name;
+        cout << "Copy Constructor called." << endl;
+    }
+    void display()
+   {
+        cout << "ID: " << id << ", Name: " << name << endl;
+    }
+};
+int main() 
+{
+    Student s1(101, "Alice");
+    s1.display();
+    Student s2 = s1;  // Copy constructor is invoked
+    s2.display();
+    return 0;
+}
