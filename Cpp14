@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+class Book {
+    string title;
+    int pages;
+
+public:
+    void setData(string t, int p) {
+        title = t;
+        pages = p;
+    }
+
+    void display() {
+        cout << "Title: " << title << ", Pages: " << pages << endl;
+    }
+};
+
+int main() {
+    Book* ptr = new Book;
+    ptr->setData("C++ Programming", 350);
+    ptr->display();
+    ptr->setData("Data Structures", 500);
+    ptr->display();
+    delete ptr;
+    return 0;
+}
