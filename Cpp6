@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+class Student
+ {
+private:
+    string name;
+    int mark1, mark2;
+public:
+        Student(string n, int m1, int m2)
+    {
+        name = n;
+        mark1 = m1;
+        mark2 = m2;
+    }
+        friend void calculateAverage(Student s);
+};
+void calculateAverage(Student s) 
+{
+    float avg = (s.mark1 + s.mark2) / 2.0;
+    cout << "Student Name: " << s.name << endl;
+    cout << "Average Marks: " << avg << endl;
+}
+int main() 
+{
+    Student s1("Ananya", 85, 90); 
+    calculateAverage(s1);
+    return 0;
+}
