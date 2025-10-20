@@ -1,0 +1,38 @@
+#include <iostream>
+using namespace std;
+
+class Root {
+public:
+    Root() {
+        cout << "Root Constructor\n";
+    }
+    ~Root() {
+        cout << "Root Destructor\n";
+    }
+};
+class Branch : public Root {
+public:
+    Branch() {
+        cout << "Branch Constructor\n";
+    }
+    ~Branch() {
+        cout << "Branch Destructor\n";
+    }
+};
+class Leaf : public Branch {
+public:
+    Leaf() {
+        cout << "Leaf Constructor\n";
+    }
+    ~Leaf() {
+        cout << "Leaf Destructor\n";
+    }
+};
+
+int main() {
+    cout << "Creating Leaf Object\n";
+    Leaf obj;
+    cout << "End of main\n";
+    return 0;
+}
+
