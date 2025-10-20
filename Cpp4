@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+class Student
+ {
+private:
+    int id;
+    string name;
+public:
+        Student(int id, string name) 
+   {
+        this->id = id;         
+        this->name = name;
+    }
+    {
+        this->name = name;
+        return *this;
+    }
+    void display() 
+{
+        cout << "ID: " << this->id << endl;
+        cout << "Name: " << this->name << endl;
+    }
+};
+int main()
+ {
+    Student s1(180, "Kavya");
+    cout << "Before updating name:\n";
+    s1.display();
+    s1.updateName("Satya");
+    cout << "\nAfter updating name:\n";
+    s1.display();
+    return 0;
+} 
