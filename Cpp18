@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+int main() {
+    try {
+        int choice;
+        cout << "Enter a choice (1, 2, or other): ";
+        cin >> choice;
+        if (choice == 1) {
+            throw 10;  // Throw an integer exception
+        } else if (choice == 2) {
+            throw 'A'; // Throw a char exception
+        } else {
+            throw "Unknown exception";  
+        }
+    }
+    catch (int e) {
+        cout << "Caught an integer exception: " << e << endl;
+    }
+    catch (char e) {
+        cout << "Caught a char exception: " << e << endl;
+    }
+    catch (const char* e) {
+        cout << "Caught a string exception: " << e << endl;
+    }
+    cout << "Program continues after handling exceptions." << endl;
+    return 0;
+}
