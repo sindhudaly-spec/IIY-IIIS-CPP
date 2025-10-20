@@ -1,0 +1,109 @@
+#include <iostream>
+using namespace std;
+
+class Animal {
+public:
+    void sound() {
+        cout << "Animal makes sound" << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Dog barks" << endl;
+    }
+};
+
+class LivingThing {
+public:
+    void breathe() {
+        cout << "Breathing..." << endl;
+    }
+};
+
+class Human : public LivingThing {
+public:
+    void speak() {
+        cout << "Human speaks" << endl;
+    }
+};
+
+class Student : public Human {
+public:
+    void study() {
+        cout << "Student studies" << endl;
+    }
+};
+
+class Writer {
+public:
+    void write() {
+        cout << "Writing content" << endl;
+    }
+};
+
+class Coder {
+public:
+    void code() {
+        cout << "Writing code" << endl;
+    }
+};
+
+class TechBlogger : public Writer, public Coder {
+public:
+    void blog() {
+        cout << "TechBlogger blogs" << endl;
+    }
+};
+
+class Vehicle {
+public:
+    void move() {
+        cout << "Vehicle moves" << endl;
+    }
+};
+
+class Car : public Vehicle {
+public:
+    void drive() {
+        cout << "Car drives" << endl;
+    }
+};
+
+class Bike : public Vehicle {
+public:
+    void ride() {
+        cout << "Bike rides" << endl;
+    }
+};
+
+int main() {
+    cout << "=== Single Inheritance ===" << endl;
+    Dog d;
+    d.sound();
+    d.bark();
+
+    cout << "\n=== Multilevel Inheritance ===" << endl;
+    Student s;
+    s.breathe();
+    s.speak();
+    s.study();
+
+    cout << "\n=== Multiple Inheritance ===" << endl;
+    TechBlogger tb;
+    tb.write();
+    tb.code();
+    tb.blog();
+
+    cout << "\n=== Hierarchical Inheritance ===" << endl;
+    Car c;
+    c.move();
+    c.drive();
+
+    Bike b;
+    b.move();
+    b.ride();
+
+    return 0;
+}
